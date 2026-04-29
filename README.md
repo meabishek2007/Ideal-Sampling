@@ -150,13 +150,15 @@ plt.show()
 
 1. IMPULSE SAMPLING:
    
-<img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/f90f6aa2-73c0-426b-987e-9b6d944ee65c" />
+<img width="989" height="690" alt="image" src="https://github.com/user-attachments/assets/e148926b-277a-4145-91db-f4f107737af8" />
+
 
 
 
 2. NATURAL SAMPLING:
    
-<img width="990" height="490" alt="image" src="https://github.com/user-attachments/assets/111694f0-d5ed-469f-b3b4-8cd2a933b2ba" />
+<img width="990" height="690" alt="image" src="https://github.com/user-attachments/assets/f3117138-6844-48eb-a41c-bda4178481df" />
+
 
 
 
