@@ -123,24 +123,43 @@ x_flat = np.zeros_like(t)
 for i in range(len(ts)-1):
     x_flat[(t >= ts[i]) & (t < ts[i+1])] = xs[i]
 
-# Plot
-plt.figure(figsize=(10,8))
+# Reconstruction using interpolation
+x_recon = np.interp(t, ts, xs)
 
-plt.subplot(4,1,1)
+# Plot
+plt.figure(figsize=(10,10))
+
+# Original Signal
+plt.subplot(5,1,1)
 plt.plot(t, x)
 plt.title("Original Signal")
+plt.grid(True)
 
-plt.subplot(4,1,2)
+# Sampling Pulse Train
+plt.subplot(5,1,2)
 plt.plot(t, pulse)
 plt.title("Sampling Pulse Train")
+plt.grid(True)
 
-plt.subplot(4,1,3)
+# Sampled Signal
+plt.subplot(5,1,3)
 plt.stem(ts, xs)
 plt.title("Sampled Signal")
+plt.grid(True)
 
-plt.subplot(4,1,4)
+# Flat Top Sampled Signal
+plt.subplot(5,1,4)
 plt.step(t, x_flat, where='post')
 plt.title("Flat Top Sampled Signal")
+plt.grid(True)
+
+# Reconstructed Signal
+plt.subplot(5,1,5)
+plt.plot(t, x, label='Original Signal')
+plt.plot(t, x_recon, '--', label='Reconstructed Signal')
+plt.title("Reconstructed Signal")
+plt.legend()
+plt.grid(True)
 
 plt.tight_layout()
 plt.show()
@@ -164,7 +183,8 @@ plt.show()
 
 3. FLAT TOP SAMPLING:
 
-<img width="989" height="790" alt="image" src="https://github.com/user-attachments/assets/8bfc185f-3d81-47a8-a725-0772646eb1b3" />
+<img width="989" height="989" alt="image" src="https://github.com/user-attachments/assets/99fa0cd5-ed6f-4d87-9641-3721a1d188c1" />
+
 
 
 
