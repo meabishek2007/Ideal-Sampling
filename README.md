@@ -92,20 +92,32 @@ x = np.sin(2 * np.pi * f * t)
 ts = np.arange(0, 1, 1/fs)
 xs = np.sin(2 * np.pi * f * ts)
 
+# Pulse train
+pulse = np.zeros_like(t)
+for i in ts:
+    pulse[(t >= i) & (t < i + 0.01)] = 1   # small pulse width
+
 # Flat-top (sample and hold)
 x_flat = np.zeros_like(t)
-
 for i in range(len(ts)-1):
     x_flat[(t >= ts[i]) & (t < ts[i+1])] = xs[i]
 
 # Plot
-plt.figure(figsize=(10,5))
+plt.figure(figsize=(10,8))
 
-plt.subplot(2,1,1)
+plt.subplot(4,1,1)
 plt.plot(t, x)
 plt.title("Original Signal")
 
-plt.subplot(2,1,2)
+plt.subplot(4,1,2)
+plt.plot(t, pulse)
+plt.title("Sampling Pulse Train")
+
+plt.subplot(4,1,3)
+plt.stem(ts, xs)
+plt.title("Sampled Signal")
+
+plt.subplot(4,1,4)
 plt.step(t, x_flat, where='post')
 plt.title("Flat Top Sampled Signal")
 
@@ -129,7 +141,8 @@ plt.show()
 
 3. FLAT TOP SAMPLING:
 
-<img width="989" height="490" alt="image" src="https://github.com/user-attachments/assets/563355a2-be17-42c6-8438-d6e43a7bea73" />
+<img width="989" height="790" alt="image" src="https://github.com/user-attachments/assets/8bfc185f-3d81-47a8-a725-0772646eb1b3" />
+
 
 
 
