@@ -3,6 +3,27 @@
 Write a simple Python program for the construction and reconstruction of ideal, natural, and flattop sampling.
 # Tools required
 Google Colab
+
+# Theory:
+
+1. Impulse Sampling (Ideal Sampling)
+
+Impulse sampling is a method in which the continuous-time signal is multiplied by a train of impulses (Dirac delta functions). The output consists of instantaneous samples taken at discrete time intervals.
+
+In this method, each sample has zero width and infinite amplitude, making it an ideal and theoretical model. It is mainly used for analysis purposes and cannot be implemented practically.
+
+2. Natural Sampling
+
+Natural sampling is obtained by multiplying the input signal with a periodic train of rectangular pulses. The output consists of portions of the signal during the pulse duration.
+
+The amplitude of the sampled signal varies according to the input signal within each pulse. It is more practical than impulse sampling and preserves the original signal shape within each sampling interval.
+
+3. Flat Top Sampling (Sample and Hold)
+
+Flat top sampling is a practical method where the signal is sampled and the value is held constant until the next sampling instant. It is also known as sample-and-hold method.
+
+The output appears as a staircase waveform. This method is widely used in analog-to-digital conversion but introduces a small distortion called the aperture effect.
+
 # Program
 
 1. IMPULSE SAMPLING:
